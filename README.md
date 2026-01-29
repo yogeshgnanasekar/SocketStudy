@@ -76,8 +76,12 @@ print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 ## output :
 SERVER:
+
+
 <img width="667" height="82" alt="Screenshot 2026-01-29 113718" src="https://github.com/user-attachments/assets/2e7e7bd2-979d-4aba-ba9f-711cedc8ea90" />
 CLIENT:
+
+
 <img width="708" height="58" alt="Screenshot 2026-01-29 113746" src="https://github.com/user-attachments/assets/9971a961-7b9a-4a71-bb40-b0d633a37e7e" />
 
 
