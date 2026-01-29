@@ -79,6 +79,8 @@ SERVER:
 
 
 <img width="667" height="82" alt="Screenshot 2026-01-29 113718" src="https://github.com/user-attachments/assets/2e7e7bd2-979d-4aba-ba9f-711cedc8ea90" />
+
+
 CLIENT:
 
 
