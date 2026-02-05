@@ -55,35 +55,49 @@ Socket programming finds applications in various domains, including web developm
 ## PROGRAMS:
 SERVER:
 import socket
-from datetime import datetime
-s=socket.socket()
-s.bind(('localhost',8000))
+
+s = socket.socket()
+print("Socket successfully created")
+
+port = 12345
+s.bind(("127.0.0.1", port))
+print("Socket binded to", port)
+
 s.listen(5)
-c,addr=s.accept()
-print("Client Address : ",addr)
-now = datetime.now()
-c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
-ack=c.recv(1024).decode()
-if ack:
- print(ack)
+print("Socket is listening ...")
+
+c, addr = s.accept()
+print("Got connection from this ", addr)
+c.send("Thank you for connecting ".encode())
 c.close()
+
 CLIENT:
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-print(s.getsockname())
-print(s.recv(1024).decode())
-s.send("acknowledgement recived from the server".encode())
+
+import socket             
+
+ 
+s = socket.socket()         
+
+
+port = 12345                
+
+ 
+s.connect(('127.0.0.1', port)) 
+
+
+print (s.recv(1024).decode())
+ 
+s.close()
 ## output :
 SERVER:
-<img width="452" height="77" alt="Screenshot 2026-02-05 114743" src="https://github.com/user-attachments/assets/cab77962-1ded-48c9-ae58-c9b7d1fd4fb0" />
+<img width="983" height="111" alt="Screenshot 2026-02-05 145817" src="https://github.com/user-attachments/assets/5b561312-5029-42c6-a4f0-4ec6318a5351" />
+
 
 
 
 CLIENT:
+<img width="841" height="99" alt="Screenshot 2026-02-05 145824" src="https://github.com/user-attachments/assets/8ea652b1-eeb0-4c8c-a6ad-38733370a08c" />
 
-
-<img width="216" height="76" alt="Screenshot 2026-02-05 114839" src="https://github.com/user-attachments/assets/d43701fd-8d37-4489-bc1c-ee545e8c0919" />
 
 
 ## Result:
